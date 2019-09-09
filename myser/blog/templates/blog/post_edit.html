@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+	<h1>New post</h1>
+	<!-- form태그는 post방식으로 전달 -->
+	<form method="post" class="post-form">
+		<!-- csrf_token은 post방식인경우 필수적으로 입력 -->
+		{% csrf_token %}
+			
+			{{form.as_p}}
+		<button type="submit" class="save btn btn-default">
+			Save
+		</button>
+	</form>
+{% endblock %}
+
